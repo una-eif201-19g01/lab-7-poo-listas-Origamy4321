@@ -1,0 +1,14 @@
+//
+// Created by Lady Asura III on 20/9/2019.
+//
+
+#ifndef LAB_7_POO_LISTAS_ORIGAMY4321_AUTOMOVIL_H
+#define LAB_7_POO_LISTAS_ORIGAMY4321_AUTOMOVIL_H
+
+
+class Automovil {
+
+};
+
+
+#endif //LAB_7_POO_LISTAS_ORIGAMY4321_AUTOMOVIL_H
