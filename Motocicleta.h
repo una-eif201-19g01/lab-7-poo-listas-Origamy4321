@@ -5,8 +5,17 @@
 #ifndef LAB_7_POO_LISTAS_ORIGAMY4321_MOTOCICLETA_H
 #define LAB_7_POO_LISTAS_ORIGAMY4321_MOTOCICLETA_H
 
+#include "Vehiculo.h"
 
-class Motocicleta {
+using namespace std;
+
+class Motocicleta: public Vehiculo {
+private:
+
+public:
+    Motocicleta();
+
+    Motocicleta(const string &marca, const string &modelo, int anno, int placa, float costo, float horas, string tipo);
 
 };
 
