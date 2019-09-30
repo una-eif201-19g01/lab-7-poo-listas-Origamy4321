@@ -15,7 +15,8 @@ private:
 public:
     Motocicleta();
 
-    Motocicleta(const string &marca, const string &modelo, int anno, int placa, float costo, float horas, string tipo);
+    Motocicleta(const string &marca, const string &modelo, int anno, int placa, float costo, float tiempoArrendado);
+
 
 };
 

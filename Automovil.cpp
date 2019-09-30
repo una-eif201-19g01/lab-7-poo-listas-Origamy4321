@@ -6,5 +6,9 @@
 
 Automovil::Automovil() {}
 
-Automovil::Automovil(const string &marca, const string &modelo, int anno, int placa, float costo, float horas, string tipo)
-        : Vehiculo(marca, modelo, anno, placa, costo, horas, tipo) {}
+Automovil::Automovil(const string &marca, const string &modelo, int anno, int placa, float costo, float tiempoArrendado)
+        : Vehiculo(marca, modelo, anno, placa, costo, tiempoArrendado) {}
+
+
+
+

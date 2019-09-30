@@ -18,14 +18,21 @@ private:
     int anno;
     int placa;
     float costo;
-    float horas;
-    string tipo;
+    float tiempoArrendado;
 
 public:
 
     Vehiculo();
 
-    Vehiculo(const string &marca, const string &modelo, int anno, int placa, float costo, float horas, string tipo);
+    float getCosto() const;
+
+    void setCosto(float costo);
+
+    float getTiempoArrendado() const;
+
+    void setTiempoArrendado(float tiempoArrendado);
+
+    Vehiculo(const string &marca, const string &modelo, int anno, int placa, float costo, float tiempoArrendado);
 
     const string &getMarca() const;
 
@@ -45,25 +52,14 @@ public:
 
     string toString();
 
-    float precioVehiculo();
-
     void eliminarDatosAnno(int);
 
     void eliminarMarca(int);
 
     void eliminarModelo(int);
 
-    void eliminarCosto(int);
+    float calcularCosto();
 
-    void eliminarHoras(int);
-
-    float getCosto() const;
-
-    void setCosto(float costo);
-
-    float getHoras() const;
-
-    void setHoras(float horas);
 };
 
 

@@ -6,8 +6,9 @@
 
 Vehiculo::Vehiculo() {}
 
-Vehiculo::Vehiculo(const string &marca, const string &modelo, int anno, int placa, float costo, float horas, string tipo) : marca(
-        marca), modelo(modelo), anno(anno), placa(placa), costo(costo), horas(horas), tipo(tipo) {}
+Vehiculo::Vehiculo(const string &marca, const string &modelo, int anno, int placa, float costo, float tiempoArrendado)
+        : marca(marca), modelo(modelo), anno(anno), placa(placa), costo(costo), tiempoArrendado(tiempoArrendado) {}
+
 
 const string &Vehiculo::getMarca() const {
     return marca;
@@ -44,39 +45,14 @@ void Vehiculo::setPlaca(int placa) {
 string Vehiculo::toString() {
 
     string reporte;
-    reporte = "Los datos del vehiculo son los siguientes: " "\n" "Marca del vehiculo" + getMarca() + "\n" +
-              "Modelo del vehiculo:" + getModelo() + "El número de placa del vehiculo es el siguiente: " +
-              to_string(getPlaca()) + "\n" + "El año del vehiculo es: " + to_string(getAnno()) + "\t" +
-              "el costo del arrendamiento es de: "+ to_string(precioVehiculo()) + "\n";
+    reporte = "Los datos del vehiculo son los siguientes:  " "\n" "Marca del vehiculo:   " + getMarca() + "\n" +
+              "Modelo del vehiculo:   " + getModelo() + "El número de placa del vehiculo es el siguiente:  " +
+              to_string(getPlaca()) + "\n" + "El año del vehiculo es:   " + to_string(getAnno()) + "\t" +
+              "el costo del arrendamiento es de:  " + to_string(calcularCosto())+"\n";
 
     return reporte;
 }
 
-float Vehiculo::precioVehiculo() {
-
-    float dia;
-    float costo = 0;
-    if (tipo == "Motocicleta") {
-
-        costo = costo * horas;
-        return costo;
-    } else {
-        if (horas <= 24) {
-
-            costo = costo * 24;
-
-            return costo;
-        } else
-            for (int i = 0; i <= horas; i++) {
-                if (i % 12 == 0)
-                    dia++;
-            }
-
-        costo = costo * dia;
-
-        return costo;
-    }
-}
 
 void Vehiculo::eliminarDatosAnno(int placa) {
 
@@ -100,17 +76,6 @@ void Vehiculo::eliminarModelo(int placa) {
 
 }
 
-void Vehiculo::eliminarCosto(int placa) {
-    if (placa == getPlaca());
-    setCosto(0.0);
-}
-
-void Vehiculo::eliminarHoras(int placa) {
-    if (placa == getPlaca());
-    setHoras(0);
-
-}
-
 float Vehiculo::getCosto() const {
     return costo;
 }
@@ -119,10 +84,21 @@ void Vehiculo::setCosto(float costo) {
     Vehiculo::costo = costo;
 }
 
-float Vehiculo::getHoras() const {
-    return horas;
+float Vehiculo::getTiempoArrendado() const {
+    return tiempoArrendado;
 }
 
-void Vehiculo::setHoras(float horas) {
-    Vehiculo::horas = horas;
+void Vehiculo::setTiempoArrendado(float tiempoArrendado) {
+    Vehiculo::tiempoArrendado = tiempoArrendado;
 }
+
+float Vehiculo::calcularCosto() {
+
+    float suma = 0;
+    suma = costo * tiempoArrendado;
+
+    return suma;
+}
+
+
+

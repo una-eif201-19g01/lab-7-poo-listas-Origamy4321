@@ -15,7 +15,8 @@ private:
 public:
     Automovil();
 
-    Automovil(const string &marca, const string &modelo, int anno, int placa, float costo, float horas, string tipo);
+    Automovil(const string &marca, const string &modelo, int anno, int placa, float costo, float tiempoArrendado);
+
 
 };
 
